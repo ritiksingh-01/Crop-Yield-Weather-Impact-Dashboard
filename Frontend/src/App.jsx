@@ -5,6 +5,9 @@ import Forecast from './pages/Forecast';
 import Analysis from './pages/Analysis';
 import Warnings from './pages/Warnings';
 import CropPredictionDashboard from './pages/CropPredictionDashboard';
+import SettingsPage from './pages/SettingPage';
+import HelpPage from './pages/HelpPage';
+import AuthPage from './pages/AuthPage';
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
           <Route path="/analysis" element={<Analysis />} />
           <Route path="/cropPrediction" element={<CropPredictionDashboard />} />
           <Route path="/warnings" element={<Warnings />} />
+          <Route path="/login" element={<AuthPage />} />
+          <Route path="/helpPage" element={<HelpPage />} />
+          <Route path="/setting" element={<SettingsPage/>} />
         </Routes>
       </Layout>
     </Router>

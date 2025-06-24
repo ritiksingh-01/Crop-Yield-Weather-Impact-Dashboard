@@ -48,14 +48,16 @@ const MapVisualization = ({
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300 h-full overflow-hidden">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300 h-full overflow-hidden">
       {/* Card Header */}
-      <div className="p-4 border-b border-gray-100 flex justify-between items-center">
+      <div className="p-4 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
         <div className="flex items-center">
-          <Map className="h-5 w-5 text-green-600 mr-2" />
-          <h3 className="text-lg font-semibold text-gray-800">Uttar Pradesh Map</h3>
+          <Map className="h-5 w-5 text-green-600 dark:text-green-500 mr-2" />
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Uttar Pradesh Map</h3>
         </div>
-        <span className="text-sm font-medium">{selectedCrop}</span>
+        <span className="text-sm font-medium px-2.5 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">
+          {selectedCrop}
+        </span>
       </div>
       
       {/* Map Container */}
@@ -80,17 +82,17 @@ const MapVisualization = ({
         </MapContainer>
         
         {/* Attribution positioned absolute */}
-        <div className="absolute bottom-0 right-0 bg-white bg-opacity-70 px-1 text-xs z-[1000]">
-          © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors
+        <div className="absolute bottom-0 right-0 bg-white dark:bg-gray-800 bg-opacity-70 dark:bg-opacity-70 px-1 text-xs z-[1000]">
+          © <a href="https://www.openstreetmap.org/copyright" className="text-blue-600 dark:text-blue-400 hover:underline">OpenStreetMap</a> contributors
         </div>
       </div>
       
       {/* Legend */}
-      <div className="p-2 border-t border-gray-100 flex items-center justify-between">
+      <div className="p-2 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
         {legendItems.map((item, index) => (
           <div key={index} className="flex items-center">
             <div className="w-4 h-4 rounded-sm mr-1" style={{ backgroundColor: item.color }}></div>
-            <span className="text-xs text-gray-700">{item.label}</span>
+            <span className="text-xs text-gray-700 dark:text-gray-300">{item.label}</span>
           </div>
         ))}
       </div>

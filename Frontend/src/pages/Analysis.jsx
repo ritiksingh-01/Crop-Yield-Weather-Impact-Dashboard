@@ -58,23 +58,23 @@ const Analysis = () => {
   const [selectedMetric, setSelectedMetric] = useState('rainfall');
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 p-4">
       <div>
-        <h1 className="text-2xl font-bold">Weather Impact Analysis</h1>
-        <p className="text-gray-600">Analyzing relationships between weather patterns and crop yields</p>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Weather Impact Analysis</h1>
+        <p className="text-gray-600 dark:text-gray-300">Analyzing relationships between weather patterns and crop yields</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="card">
+        <div className="card dark:bg-gray-800 dark:border-gray-700">
           <div className="card-header">
             <div className="flex justify-between items-center">
-              <h3 className="text-lg font-medium">Weather Impact on Yield</h3>
+              <h3 className="text-lg font-medium text-gray-900 dark:text-white">Weather Impact on Yield</h3>
               <div className="flex space-x-2">
                 <button 
                   className={`px-3 py-1 text-sm rounded-md ${
                     selectedMetric === 'rainfall' 
-                      ? 'bg-blue-100 text-blue-800' 
-                      : 'bg-gray-100 text-gray-800'
+                      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400' 
+                      : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
                   }`}
                   onClick={() => setSelectedMetric('rainfall')}
                 >
@@ -83,8 +83,8 @@ const Analysis = () => {
                 <button 
                   className={`px-3 py-1 text-sm rounded-md ${
                     selectedMetric === 'temperature' 
-                      ? 'bg-red-100 text-red-800' 
-                      : 'bg-gray-100 text-gray-800'
+                      ? 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-400' 
+                      : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200'
                   }`}
                   onClick={() => setSelectedMetric('temperature')}
                 >
@@ -100,23 +100,47 @@ const Analysis = () => {
                   <ScatterChart
                     margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
                   >
-                    <CartesianGrid />
+                    <CartesianGrid stroke="#e5e7eb" strokeOpacity={0.5} />
                     <XAxis 
                       type="number" 
                       dataKey="rainfall" 
                       name="Rainfall" 
-                      label={{ value: 'Rainfall (mm)', position: 'insideBottomRight', offset: -10 }} 
+                      label={{ 
+                        value: 'Rainfall (mm)', 
+                        position: 'insideBottomRight', 
+                        offset: -10,
+                        fill: '#6b7280'
+                      }}
+                      tick={{ fill: '#6b7280' }}
+                      axisLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
+                      tickLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
                     />
                     <YAxis 
                       type="number" 
                       dataKey="yield" 
                       name="Yield" 
-                      label={{ value: 'Yield (t/ha)', angle: -90, position: 'insideLeft', offset: 10 }} 
+                      label={{ 
+                        value: 'Yield (t/ha)', 
+                        angle: -90, 
+                        position: 'insideLeft', 
+                        offset: 10,
+                        fill: '#6b7280'
+                      }}
+                      tick={{ fill: '#6b7280' }}
+                      axisLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
+                      tickLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
                     />
                     <Tooltip 
                       cursor={{ strokeDasharray: '3 3' }} 
                       formatter={(value) => [`${value} t/ha`, 'Yield']}
                       labelFormatter={(value) => `Rainfall: ${value} mm`}
+                      contentStyle={{ 
+                        backgroundColor: 'white',
+                        color: 'black',
+                        borderRadius: '0.5rem', 
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        border: '1px solid rgba(229, 231, 235, 1)'
+                      }}
                     />
                     <Scatter name="Rainfall vs Yield" data={rainfallImpactData} fill="#3b82f6" />
                   </ScatterChart>
@@ -124,23 +148,47 @@ const Analysis = () => {
                   <ScatterChart
                     margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
                   >
-                    <CartesianGrid />
+                    <CartesianGrid stroke="#e5e7eb" strokeOpacity={0.5} />
                     <XAxis 
                       type="number" 
                       dataKey="temperature" 
                       name="Temperature" 
-                      label={{ value: 'Temperature (°C)', position: 'insideBottomRight', offset: -10 }} 
+                      label={{ 
+                        value: 'Temperature (°C)', 
+                        position: 'insideBottomRight', 
+                        offset: -10,
+                        fill: '#6b7280'
+                      }}
+                      tick={{ fill: '#6b7280' }}
+                      axisLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
+                      tickLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
                     />
                     <YAxis 
                       type="number" 
                       dataKey="yield" 
                       name="Yield" 
-                      label={{ value: 'Yield (t/ha)', angle: -90, position: 'insideLeft', offset: 10 }} 
+                      label={{ 
+                        value: 'Yield (t/ha)', 
+                        angle: -90, 
+                        position: 'insideLeft', 
+                        offset: 10,
+                        fill: '#6b7280'
+                      }}
+                      tick={{ fill: '#6b7280' }}
+                      axisLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
+                      tickLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
                     />
                     <Tooltip 
                       cursor={{ strokeDasharray: '3 3' }} 
                       formatter={(value) => [`${value} t/ha`, 'Yield']}
                       labelFormatter={(value) => `Temperature: ${value}°C`}
+                      contentStyle={{ 
+                        backgroundColor: 'white',
+                        color: 'black',
+                        borderRadius: '0.5rem', 
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        border: '1px solid rgba(229, 231, 235, 1)'
+                      }}
                     />
                     <Scatter name="Temperature vs Yield" data={temperatureImpactData} fill="#ef4444" />
                   </ScatterChart>
@@ -148,9 +196,9 @@ const Analysis = () => {
               </ResponsiveContainer>
             </div>
             
-            <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-              <h4 className="font-medium mb-2">Analysis Insights</h4>
-              <p className="text-sm text-gray-700">
+            <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+              <h4 className="font-medium mb-2 text-gray-900 dark:text-white">Analysis Insights</h4>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
                 {selectedMetric === 'rainfall' 
                   ? 'Rice yields increase with rainfall up to approximately 120mm per month, after which excessive rainfall becomes detrimental. The optimal rainfall range appears to be 90-130mm per month for maximum yield potential.'
                   : 'Temperature shows a clear optimal range for rice cultivation. Yields peak around 28-32°C and decline significantly as temperatures exceed 35°C, indicating potential heat stress on crops.'}
@@ -159,9 +207,9 @@ const Analysis = () => {
           </div>
         </div>
         
-        <div className="card">
+        <div className="card dark:bg-gray-800 dark:border-gray-700">
           <div className="card-header">
-            <h3 className="text-lg font-medium">Crop Distribution in UP</h3>
+            <h3 className="text-lg font-medium text-gray-900 dark:text-white">Crop Distribution in UP</h3>
           </div>
           <div className="card-body">
             <div className="h-80 flex items-center justify-center">
@@ -181,14 +229,23 @@ const Analysis = () => {
                       <Cell key={`cell-${index}`} fill={cropColors[index % cropColors.length]} />
                     ))}
                   </Pie>
-                  <Tooltip formatter={(value) => [`${value}%`, 'Area']} />
+                  <Tooltip 
+                    formatter={(value) => [`${value}%`, 'Area']}
+                    contentStyle={{ 
+                      backgroundColor: 'white',
+                      color: 'black',
+                      borderRadius: '0.5rem', 
+                      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                      border: '1px solid rgba(229, 231, 235, 1)'
+                    }}
+                  />
                 </PieChart>
               </ResponsiveContainer>
             </div>
             
-            <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-              <h4 className="font-medium mb-2">Distribution Analysis</h4>
-              <p className="text-sm text-gray-700">
+            <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+              <h4 className="font-medium mb-2 text-gray-900 dark:text-white">Distribution Analysis</h4>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
                 Rice and wheat dominate agricultural production in Uttar Pradesh, accounting for over 70% of the total cultivated area. This heavy reliance on cereal crops suggests potential opportunities for crop diversification to improve soil health and reduce vulnerability to specific crop diseases or pests.
               </p>
             </div>
@@ -196,9 +253,9 @@ const Analysis = () => {
         </div>
       </div>
       
-      <div className="card">
+      <div className="card dark:bg-gray-800 dark:border-gray-700">
         <div className="card-header">
-          <h3 className="text-lg font-medium">Region-wise Crop Yield Comparison</h3>
+          <h3 className="text-lg font-medium text-gray-900 dark:text-white">Region-wise Crop Yield Comparison</h3>
         </div>
         <div className="card-body">
           <div className="h-80">
@@ -207,12 +264,53 @@ const Analysis = () => {
                 data={regionComparisonData}
                 margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
               >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis yAxisId="left" label={{ value: 'Yield (t/ha)', angle: -90, position: 'insideLeft' }} />
-                <YAxis yAxisId="right" orientation="right" label={{ value: 'Sugarcane Yield (t/ha)', angle: 90, position: 'insideRight' }} />
-                <Tooltip />
-                <Legend />
+                <CartesianGrid stroke="#e5e7eb" strokeOpacity={0.5} />
+                <XAxis 
+                  dataKey="name" 
+                  tick={{ fill: '#6b7280' }}
+                  axisLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
+                  tickLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
+                />
+                <YAxis 
+                  yAxisId="left" 
+                  label={{ 
+                    value: 'Yield (t/ha)', 
+                    angle: -90, 
+                    position: 'insideLeft',
+                    fill: '#6b7280'
+                  }}
+                  tick={{ fill: '#6b7280' }}
+                  axisLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
+                  tickLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
+                />
+                <YAxis 
+                  yAxisId="right" 
+                  orientation="right" 
+                  label={{ 
+                    value: 'Sugarcane Yield (t/ha)', 
+                    angle: 90, 
+                    position: 'insideRight',
+                    fill: '#6b7280'
+                  }}
+                  tick={{ fill: '#6b7280' }}
+                  axisLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
+                  tickLine={{ stroke: '#e5e7eb', strokeOpacity: 0.5 }}
+                />
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: 'white',
+                    color: 'black',
+                    borderRadius: '0.5rem', 
+                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    border: '1px solid rgba(229, 231, 235, 1)'
+                  }}
+                />
+                <Legend 
+                  wrapperStyle={{ 
+                    paddingTop: '20px',
+                    color: '#6b7280'
+                  }}
+                />
                 <Bar yAxisId="left" dataKey="rice" name="Rice" fill="#4ade80" />
                 <Bar yAxisId="left" dataKey="wheat" name="Wheat" fill="#60a5fa" />
                 <Bar yAxisId="right" dataKey="sugarcane" name="Sugarcane" fill="#f59e0b" />
@@ -220,24 +318,24 @@ const Analysis = () => {
             </ResponsiveContainer>
           </div>
           
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <h4 className="font-medium mb-2">Regional Analysis Summary</h4>
-            <p className="text-sm text-gray-700 mb-4">
+          <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+            <h4 className="font-medium mb-2 text-gray-900 dark:text-white">Regional Analysis Summary</h4>
+            <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
               Eastern UP consistently shows higher rice yields due to favorable rainfall patterns, while Western UP excels in wheat production. Sugarcane yields are highest in Central UP where irrigation infrastructure is more developed. Bundelkhand shows consistently lower yields across all crops, highlighting the need for targeted agricultural development in this region.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white p-3 rounded-md shadow-sm">
-                <div className="text-xs text-gray-500">Best Region for Rice</div>
-                <div className="font-bold">Eastern UP (4.5 t/ha)</div>
+              <div className="bg-white dark:bg-gray-600 p-3 rounded-md shadow-sm">
+                <div className="text-xs text-gray-500 dark:text-gray-300">Best Region for Rice</div>
+                <div className="font-bold dark:text-white">Eastern UP (4.5 t/ha)</div>
               </div>
-              <div className="bg-white p-3 rounded-md shadow-sm">
-                <div className="text-xs text-gray-500">Best Region for Wheat</div>
-                <div className="font-bold">Western UP (4.2 t/ha)</div>
+              <div className="bg-white dark:bg-gray-600 p-3 rounded-md shadow-sm">
+                <div className="text-xs text-gray-500 dark:text-gray-300">Best Region for Wheat</div>
+                <div className="font-bold dark:text-white">Western UP (4.2 t/ha)</div>
               </div>
-              <div className="bg-white p-3 rounded-md shadow-sm">
-                <div className="text-xs text-gray-500">Best Region for Sugarcane</div>
-                <div className="font-bold">Central UP (69.8 t/ha)</div>
+              <div className="bg-white dark:bg-gray-600 p-3 rounded-md shadow-sm">
+                <div className="text-xs text-gray-500 dark:text-gray-300">Best Region for Sugarcane</div>
+                <div className="font-bold dark:text-white">Central UP (69.8 t/ha)</div>
               </div>
             </div>
           </div>
