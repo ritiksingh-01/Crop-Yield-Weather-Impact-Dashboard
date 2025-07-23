@@ -207,7 +207,7 @@ We welcome contributions from the community! Please read our [Contributing Guide
         <img src="https://github.com/ritiksingh-01.png" width="120px;" alt="Ritik Singh" style="border-radius: 50%;"/><br />
         <sub><b>🚀 Ritik Singh</b></sub>
       </a><br />
-      <sub>Full Stack Developer</sub><br />
+      <sub>MERN Stack Developer</sub><br />
       <sub>⚡ React.js • Node.js • MongoDB</sub>
     </td>
     <td align="center">
@@ -215,8 +215,8 @@ We welcome contributions from the community! Please read our [Contributing Guide
         <img src="https://github.com/priyanshibhargava-12.png" width="120px;" alt="Priyanshi" style="border-radius: 50%;"/><br />
         <sub><b>🎨 Priyanshi</b></sub>
       </a><br />
-      <sub>Frontend Developer & Data Analyst</sub><br />
-      <sub>📊 React.js • Tailwind • Data Viz</sub>
+      <sub>Frontend Developer</sub><br />
+      <sub>📊 React.js • Tailwind</sub>
     </td>
   </tr>
 </table>
