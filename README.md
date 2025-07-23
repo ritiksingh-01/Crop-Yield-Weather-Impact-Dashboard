@@ -211,8 +211,8 @@ We welcome contributions from the community! Please read our [Contributing Guide
       <sub>⚡ React.js • Node.js • MongoDB</sub>
     </td>
     <td align="center">
-      <a href="https://github.com/Priyanshi0112">
-        <img src="https://github.com/Priyanshi0112.png" width="120px;" alt="Priyanshi" style="border-radius: 50%;"/><br />
+      <a href="https://github.com/priyanshibhargava-12">
+        <img src="https://github.com/priyanshibhargava-12.png" width="120px;" alt="Priyanshi" style="border-radius: 50%;"/><br />
         <sub><b>🎨 Priyanshi</b></sub>
       </a><br />
       <sub>Frontend Developer & Data Analyst</sub><br />
