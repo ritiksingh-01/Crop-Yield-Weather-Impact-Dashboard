@@ -162,25 +162,12 @@ npm start
 |:----------------------:|:-----------------------:|:--------------------------:|
 | Policy making          | Climate research        | Crop planning              |
 | Resource allocation    | Academic publications   | Risk assessment            |
-| Disaster preparedness  | Grant applications      | Market analysis            |
-| Regional planning      | Student projects        | Insurance claims           |
+| Disaster preparedness  | Student projects        | Market analysis            |
+| Regional planning      | Grant applications      | Insurance claims           |
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) before making a pull request.
-
-**How to contribute:**
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
-
----
-
-## 👥 Contributors
+## 👥 Development Team
 
 <div align="center">
 
@@ -213,13 +200,12 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 - **FAO** for agricultural data
 - **NOAA** for weather datasets
 - **Open Source Community** for tools and libraries
-- **Contributors** for making this project possible
 
 ---
 
 <div align="center">
 
-**⭐ If you like this project, please give it a star! ⭐**
+**⭐ If you find this project useful, please give it a star! ⭐**
 
 *Made with ❤️ by the Crop Yield Analytics Team*
 
