@@ -8,6 +8,7 @@ import CropPredictionDashboard from './pages/CropPredictionDashboard';
 import SettingsPage from './pages/SettingPage';
 import HelpPage from './pages/HelpPage';
 import AuthPage from './pages/AuthPage';
+import ChatPage from './pages/ChatPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/analysis" element={<Analysis />} />
           <Route path="/cropPrediction" element={<CropPredictionDashboard />} />
           <Route path="/warnings" element={<Warnings />} />
+          <Route path="/chat" element={<ChatPage />} />
           <Route path="/login" element={<AuthPage />} />
           <Route path="/helpPage" element={<HelpPage />} />
           <Route path="/setting" element={<SettingsPage/>} />

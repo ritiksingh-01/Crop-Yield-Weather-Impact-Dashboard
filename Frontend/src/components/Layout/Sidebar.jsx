@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { BarChart3, Cloud, AlertTriangle, Home, Activity, Sprout, Settings, HelpCircle, LogOut, ChevronRight, User } from 'lucide-react';
+import { BarChart3, Cloud, AlertTriangle, Home, Activity, Sprout, Settings, HelpCircle, LogOut, ChevronRight, User, MessageSquare } from 'lucide-react';
 
 // Helper function to get initials from name
 export const getInitials = (name) => {
@@ -57,6 +57,7 @@ const Sidebar = ({ user, logout }) => {
     { name: 'Analysis', icon: <Activity className="h-5 w-5" />, path: '/analysis' },
     { name: 'Crop Prediction', icon: <Sprout className="h-5 w-5" />, path: '/cropPrediction' },
     { name: 'Warnings', icon: <AlertTriangle className="h-5 w-5" />, path: '/warnings' },
+    { name: 'AI Chat', icon: <MessageSquare className="h-5 w-5" />, path: '/chat' },
     { name: 'Settings', icon: <Settings className="h-5 w-5" />, path: '/setting' },
     { name: 'Help', icon: <HelpCircle className="h-5 w-5" />, path: '/helpPage' },
   ];
